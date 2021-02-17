@@ -10,7 +10,8 @@ import React from 'react';
 // import Basic1009 from './URI_1009';
 // import Basic1010 from './URI_1010';
 // import Basic1011 from './URI_1011';
-import Basic1012 from './URI_1012';
+// import Basic1012 from './URI_1012';
+import Basic1013 from './URI_1013';
 
 const App = () => {
   // return <Basic1001 />;
@@ -24,7 +25,8 @@ const App = () => {
   // return <Basic1009 />;
   // return <Basic1010 />;
   // return <Basic1011 />;
-  return <Basic1012 />;
+  // return <Basic1012 />;
+  return <Basic1013 />;
 };
 
 export default App;
