@@ -1,27 +1,22 @@
 import React, {useState} from 'react';
 
-import {
-  Text,
-  StyleSheet,
-  View,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, View, TextInput, TouchableOpacity} from 'react-native';
+import styles from './styles';
+import useURI1007 from './useUri1007';
 
 const Basic1007 = () => {
-  const [numA, setNumA] = useState('');
-  const [numB, setNumB] = useState('');
-  const [numC, setNumC] = useState('');
-  const [numD, setNumD] = useState('');
-  const [diff, setDiff] = useState('');
-
-  const calc = () => {
-    const calcValue =
-      parseInt(numA, 0) * parseInt(numB, 0) -
-      parseInt(numC, 0) * parseInt(numD, 0);
-    setDiff(calcValue);
-  };
-
+  const {
+    numA,
+    setNumA,
+    numB,
+    setNumB,
+    numC,
+    setNumC,
+    numD,
+    setNumD,
+    diff,
+    calcDifference,
+  } = useURI1007();
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Diferença de A*B por C*D</Text>
@@ -64,7 +59,7 @@ const Basic1007 = () => {
         />
       </View>
       <Text style={styles.text}>{`DIFERENÇA = ${diff}`}</Text>
-      <TouchableOpacity onPress={calc}>
+      <TouchableOpacity onPress={calcDifference}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>Calcular diferença</Text>
         </View>
@@ -72,50 +67,5 @@ const Basic1007 = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 5,
-  },
-
-  containerTextInput: {
-    flexDirection: 'row',
-    marginBottom: 5,
-    justifyContent: 'space-between',
-  },
-
-  divider: {
-    marginHorizontal: 5,
-  },
-
-  textInput: {
-    borderWidth: 1,
-    flex: 1,
-    fontSize: 18,
-  },
-
-  text: {
-    fontSize: 20,
-    alignSelf: 'center',
-  },
-
-  textObs: {
-    padding: 5,
-    fontSize: 12,
-    textAlign: 'center',
-  },
-
-  button: {
-    padding: 5,
-    borderWidth: 1,
-    borderRadius: 5,
-    alignItems: 'center',
-    marginTop: 10,
-  },
-
-  buttonText: {
-    fontSize: 20,
-  },
-});
 
 export default Basic1007;

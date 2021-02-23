@@ -1,25 +1,19 @@
-import React, {useState} from 'react';
-import {
-  Text,
-  StyleSheet,
-  View,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import React from 'react';
+import {Text, View, TextInput, TouchableOpacity} from 'react-native';
+import styles from './styles';
+import useURI1006 from './useUri1006';
 
 const Basic1006 = () => {
-  const [nota1, setNota1] = useState('');
-  const [nota2, setNota2] = useState('');
-  const [nota3, setNota3] = useState('');
-  const [media, setMedia] = useState('');
-
-  const calc = () => {
-    const calcValue =
-      (parseFloat(nota1) * 2 + parseFloat(nota2) * 3 + parseFloat(nota3) * 5) /
-      10;
-    setMedia(calcValue.toFixed(1));
-  };
-
+  const {
+    nota1,
+    setNota1,
+    nota2,
+    setNota2,
+    nota3,
+    setNota3,
+    media,
+    calcAverage,
+  } = useURI1006();
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Média entre três notas</Text>
@@ -54,7 +48,7 @@ const Basic1006 = () => {
         />
       </View>
       <Text style={styles.text}>{`MEDIA = ${media}`}</Text>
-      <TouchableOpacity onPress={calc}>
+      <TouchableOpacity onPress={calcAverage}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>Calcular média</Text>
         </View>
@@ -62,50 +56,5 @@ const Basic1006 = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 5,
-  },
-
-  containerTextInput: {
-    flexDirection: 'row',
-    marginBottom: 5,
-    justifyContent: 'space-between',
-  },
-
-  divider: {
-    marginHorizontal: 5,
-  },
-
-  textInput: {
-    borderWidth: 1,
-    flex: 1,
-    fontSize: 18,
-  },
-
-  text: {
-    fontSize: 20,
-    alignSelf: 'center',
-  },
-
-  textObs: {
-    padding: 5,
-    fontSize: 12,
-    textAlign: 'center',
-  },
-
-  button: {
-    padding: 5,
-    borderWidth: 1,
-    borderRadius: 5,
-    alignItems: 'center',
-    marginTop: 10,
-  },
-
-  buttonText: {
-    fontSize: 20,
-  },
-});
 
 export default Basic1006;
