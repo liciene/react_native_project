@@ -7,11 +7,11 @@ import Basic1001 from './src/screens/uri-1001';
 // import Basic1006 from './src/screens/uri-1006';
 // import Basic1007 from './src/screens/uri-1007';
 // import Basic1008 from './src/screens/uri-1008';
-// import Basic1009 from './URI_1009';
-// import Basic1010 from './URI_1010';
-// import Basic1011 from './URI_1011';
-// import Basic1012 from './URI_1012';
-// import Basic1013 from './URI_1013';
+// import Basic1009 from './src/screens/uri-1009';
+// import Basic1010 from './src/screens/uri-1010';
+// import Basic1011 from './src/screens/uri-1011';
+// import Basic1012 from './src/screens/uri-1012';
+// import Basic1013 from './src/screens/uri-1013';
 
 const App = () => {
   return <Basic1001 />;
