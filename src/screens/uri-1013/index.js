@@ -1,19 +1,10 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput} from 'react-native';
 import styles from './styles';
 import useURI1013 from './useUri1013';
 
 const Basic1013 = () => {
-  const {
-    numA,
-    setNumA,
-    numB,
-    setNumB,
-    numC,
-    setNumC,
-    higher,
-    getHigherValue,
-  } = useURI1013();
+  const {numA, setNumA, numB, setNumB, numC, setNumC, higher} = useURI1013();
 
   return (
     <View style={styles.container}>
@@ -44,11 +35,6 @@ const Basic1013 = () => {
         />
       </View>
       <Text style={styles.text}>{`${higher} é maior`}</Text>
-      <TouchableOpacity onPress={getHigherValue}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Calcular</Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };

@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-import {Text, View, TextInput, TouchableOpacity} from 'react-native';
+import {Text, View, TextInput} from 'react-native';
 import styles from './styles';
 import useURI1007 from './useUri1007';
 
@@ -15,7 +15,6 @@ const Basic1007 = () => {
     numD,
     setNumD,
     diff,
-    calcDifference,
   } = useURI1007();
   return (
     <View style={styles.container}>
@@ -59,11 +58,6 @@ const Basic1007 = () => {
         />
       </View>
       <Text style={styles.text}>{`DIFERENÇA = ${diff}`}</Text>
-      <TouchableOpacity onPress={calcDifference}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Calcular diferença</Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };

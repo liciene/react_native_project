@@ -1,19 +1,10 @@
 import React from 'react';
-import {Text, View, TextInput, TouchableOpacity} from 'react-native';
+import {Text, View, TextInput} from 'react-native';
 import styles from './styles';
 import useURI1009 from './useUri1009';
 
 const Basic1009 = () => {
-  const {
-    name,
-    setName,
-    salary,
-    setSalary,
-    sale,
-    setSale,
-    total,
-    calcSalary,
-  } = useURI1009();
+  const {name, setName, salary, setSalary, sale, setSale, total} = useURI1009();
 
   return (
     <View style={styles.container}>
@@ -47,11 +38,6 @@ const Basic1009 = () => {
         <View style={styles.divider} />
         <Text>{`TOTAL = ${total}`}</Text>
       </View>
-      <TouchableOpacity onPress={calcSalary}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Calcular</Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };
