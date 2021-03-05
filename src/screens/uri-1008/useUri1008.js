@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useCallback, useState} from 'react';
 
 const useURI1008 = () => {
   const [functionary, setFunctionary] = useState('');
@@ -7,10 +7,10 @@ const useURI1008 = () => {
   const [value, setValue] = useState('');
   const [salary, setSalary] = useState('');
 
-  const calcSalary = () => {
+  const calcSalary = useCallback(() => {
     const calcValue = hour * value;
     setSalary(calcValue);
-  };
+  }, [hour, value]);
 
   return {
     functionary,

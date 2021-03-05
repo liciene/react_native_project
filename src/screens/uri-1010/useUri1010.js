@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useCallback, useState} from 'react';
 
 const useURI1010 = () => {
   const [amount1, setAmount1] = useState('');
@@ -7,12 +7,12 @@ const useURI1010 = () => {
   const [value2, setValue2] = useState('');
   const [total, setTotal] = useState('');
 
-  const calcTotalPrice = () => {
+  const calcTotalPrice = useCallback(() => {
     const calcValue =
       parseFloat(amount1) * parseFloat(value1) +
       parseFloat(amount2) * parseFloat(value2);
     setTotal(calcValue.toFixed(2));
-  };
+  }, [amount1, value1, amount2, value2]);
 
   return {
     amount1,

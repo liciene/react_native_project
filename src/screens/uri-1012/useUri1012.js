@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useCallback, useState} from 'react';
 
 const useURI1012 = () => {
   const [num1, setNum1] = useState('');
@@ -11,7 +11,7 @@ const useURI1012 = () => {
   const [quad, setQuad] = useState('');
   const [ret, setRet] = useState('');
 
-  const calcArea = () => {
+  const calcArea = useCallback(() => {
     const calcTri = (parseFloat(num1) * parseFloat(num3)) / 2;
     setTri(calcTri.toFixed(3));
 
@@ -27,7 +27,7 @@ const useURI1012 = () => {
 
     const calcRet = parseFloat(num1) * parseFloat(num2);
     setRet(calcRet.toFixed(3));
-  };
+  }, [num1, num2, num3]);
 
   return {
     num1,
