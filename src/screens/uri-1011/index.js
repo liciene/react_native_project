@@ -4,7 +4,7 @@ import styles from './styles';
 import useURI1011 from './useUri1011';
 
 const Basic1011 = () => {
-  const {radius, setRadius, sphere, calcVolume} = useURI1011();
+  const {radius, setRadius, sphere} = useURI1011();
 
   return (
     <View style={styles.container}>
@@ -17,11 +17,6 @@ const Basic1011 = () => {
         keyboardType="number-pad"
       />
       <Text style={styles.text}>{`VOLUME = ${sphere}`}</Text>
-      <TouchableOpacity onPress={calcVolume}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Calcular</Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };

@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 const useURI1007 = () => {
   const [numA, setNumA] = useState('');
@@ -7,12 +7,12 @@ const useURI1007 = () => {
   const [numD, setNumD] = useState('');
   const [diff, setDiff] = useState('');
 
-  const calcDifference = () => {
+  useEffect(() => {
     const calcValue =
       parseInt(numA, 0) * parseInt(numB, 0) -
       parseInt(numC, 0) * parseInt(numD, 0);
     setDiff(calcValue);
-  };
+  }, [numA, numB, numC, numD]);
 
   return {
     numA,
@@ -24,7 +24,6 @@ const useURI1007 = () => {
     numD,
     setNumD,
     diff,
-    calcDifference,
   };
 };
 

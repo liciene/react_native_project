@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 const useURI1013 = () => {
   const [numA, setNumA] = useState('');
@@ -7,7 +7,7 @@ const useURI1013 = () => {
 
   const [higher, setHigher] = useState('');
 
-  const getHigherValue = () => {
+  useEffect(() => {
     const higherAB =
       (parseFloat(numA) +
         parseFloat(numB) +
@@ -16,7 +16,7 @@ const useURI1013 = () => {
     const higherABC =
       (higherAB + parseFloat(numC) + Math.abs(higherAB - numC)) / 2;
     setHigher(higherABC);
-  };
+  }, [numA, numB, numC]);
 
   return {
     numA,
@@ -26,7 +26,6 @@ const useURI1013 = () => {
     numC,
     setNumC,
     higher,
-    getHigherValue,
   };
 };
 

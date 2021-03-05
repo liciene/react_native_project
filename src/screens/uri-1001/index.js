@@ -1,10 +1,10 @@
 import React from 'react';
-import {Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Text, TextInput, View} from 'react-native';
 import styles from './styles';
 import useURI1001 from './useUri1001';
 
 const Basic1001 = () => {
-  const {num1, num2, sumTwoNumbers, result, setNum1, setNum2} = useURI1001();
+  const {num1, num2, result, setNum1, setNum2} = useURI1001();
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Soma de dois números</Text>
@@ -26,11 +26,6 @@ const Basic1001 = () => {
         />
       </View>
       <Text style={styles.text}>{`Resultado: ${result}`}</Text>
-      <TouchableOpacity onPress={sumTwoNumbers}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Somar</Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };
