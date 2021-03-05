@@ -1,5 +1,5 @@
 import React from 'react';
-import Basic1001 from './src/screens/uri-1001';
+// import Basic1001 from './src/screens/uri-1001';
 // import Basic1002 from './src/screens/uri-1002';
 // import Basic1003 from './src/screens/uri-1003';
 // import Basic1004 from './src/screens/uri-1004';
@@ -10,11 +10,11 @@ import Basic1001 from './src/screens/uri-1001';
 // import Basic1009 from './src/screens/uri-1009';
 // import Basic1010 from './src/screens/uri-1010';
 // import Basic1011 from './src/screens/uri-1011';
-// import Basic1012 from './src/screens/uri-1012';
+import Basic1012 from './src/screens/uri-1012';
 // import Basic1013 from './src/screens/uri-1013';
 
 const App = () => {
-  return <Basic1001 />;
+  // return <Basic1001 />;
   // return <Basic1002 />;
   // return <Basic1003 />;
   // return <Basic1004 />;
@@ -25,7 +25,7 @@ const App = () => {
   // return <Basic1009 />;
   // return <Basic1010 />;
   // return <Basic1011 />;
-  // return <Basic1012 />;
+  return <Basic1012 />;
   // return <Basic1013 />;
 };
 
