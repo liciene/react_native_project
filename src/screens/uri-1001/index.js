@@ -1,32 +1,44 @@
 import React from 'react';
-import {Text, TextInput, View} from 'react-native';
-import styles from './styles';
+import styles from '../../styles/general';
 import useURI1001 from './useUri1001';
+import {View} from 'react-native';
+import {Text, TextInput} from 'react-native-paper';
+import Background from '../../components/backgroud';
+import Divider from '../../components/divider';
+import AppBar from '../../components/appbar';
 
 const Basic1001 = () => {
   const {num1, num2, result, setNum1, setNum2} = useURI1001();
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Soma de dois números</Text>
-      <View style={styles.containerTextInput}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Digite aqui"
-          value={num1}
-          onChangeText={setNum1}
-          keyboardType="number-pad"
-        />
-        <View style={styles.divider} />
-        <TextInput
-          style={styles.textInput}
-          placeholder="Digite aqui"
-          value={num2}
-          onChangeText={setNum2}
-          keyboardType="number-pad"
-        />
-      </View>
-      <Text style={styles.text}>{`Resultado: ${result}`}</Text>
-    </View>
+    <>
+      <AppBar title="1001" backButton />
+      <Background>
+        <Divider />
+        <Text style={styles.text}>Soma de dois números</Text>
+        <Divider />
+        <View style={styles.containerTextInput}>
+          <TextInput
+            style={styles.textInput}
+            label="Digite um número"
+            mode="outlined"
+            value={num1}
+            onChangeText={setNum1}
+            keyboardType="number-pad"
+          />
+          <View style={styles.divider} />
+          <TextInput
+            style={styles.textInput}
+            label="Digite um número"
+            mode="outlined"
+            value={num2}
+            onChangeText={setNum2}
+            keyboardType="number-pad"
+          />
+        </View>
+        <Divider />
+        <Text style={styles.text}>{`Resultado: ${result}`}</Text>
+      </Background>
+    </>
   );
 };
 
