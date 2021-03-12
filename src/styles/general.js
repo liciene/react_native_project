@@ -1,27 +1,19 @@
 import {StyleSheet} from 'react-native';
-const styles = StyleSheet.create({
-  container: {
-    padding: 5,
-  },
 
+const styles = StyleSheet.create({
   containerTextInput: {
     flexDirection: 'row',
     marginBottom: 10,
     justifyContent: 'space-between',
   },
 
-  divider: {
-    marginHorizontal: 5,
-  },
-
   textInput: {
-    borderWidth: 1,
-    flex: 1,
     fontSize: 16,
+    flex: 1,
   },
 
   text: {
-    fontSize: 20,
+    fontSize: 22,
     alignSelf: 'center',
   },
 
@@ -31,16 +23,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
-  button: {
-    padding: 5,
-    borderWidth: 1,
-    borderRadius: 5,
-    alignItems: 'center',
-    marginTop: 10,
-  },
-
-  buttonText: {
-    fontSize: 20,
+  divider: {
+    marginHorizontal: 5,
   },
 });
 

@@ -1,23 +1,35 @@
 import React from 'react';
-import {Text, TouchableOpacity, View, TextInput} from 'react-native';
-import styles from './styles';
+import {View} from 'react-native';
+import styles from '../../styles/general';
 import useURI1011 from './useUri1011';
+import {Text, TextInput} from 'react-native-paper';
+import Background from '../../components/backgroud';
+import Divider from '../../components/divider';
+import AppBar from '../../components/appbar';
 
 const Basic1011 = () => {
   const {radius, setRadius, sphere} = useURI1011();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Volume de uma esfera</Text>
-      <TextInput
-        style={styles.textInput}
-        placeholder="Raio"
-        value={radius}
-        onChangeText={setRadius}
-        keyboardType="number-pad"
-      />
-      <Text style={styles.text}>{`VOLUME = ${sphere}`}</Text>
-    </View>
+    <>
+      <AppBar title="1011" backButton />
+      <Background>
+        <Divider />
+        <Text style={styles.text}>Volume de uma esfera</Text>
+        <Divider />
+        <View style={styles.containerTextInput}>
+          <TextInput
+            label="Digite o valor do raio"
+            mode="outlined"
+            style={styles.textInput}
+            value={radius}
+            onChangeText={setRadius}
+            keyboardType="number-pad"
+          />
+        </View>
+        <Text style={styles.text}>{`VOLUME = ${sphere}`}</Text>
+      </Background>
+    </>
   );
 };
 

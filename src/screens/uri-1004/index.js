@@ -1,7 +1,11 @@
 import React from 'react';
-import {Text, TextInput, TouchableOpacity, View} from 'react-native';
-import styles from './styles';
+import {View} from 'react-native';
+import styles from '../../styles/general';
 import useURI1004 from './useUri1004';
+import {Button, Text, TextInput} from 'react-native-paper';
+import Background from '../../components/backgroud';
+import Divider from '../../components/divider';
+import AppBar from '../../components/appbar';
 
 const Basic1004 = () => {
   const {
@@ -13,32 +17,39 @@ const Basic1004 = () => {
     multiplyTwoNumbers,
   } = useURI1004();
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Cálculo de produto</Text>
-      <View style={styles.containerTextInput}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Digite aqui"
-          value={num1}
-          onChangeText={setNum1}
-          keyboardType="number-pad"
-        />
-        <View style={styles.divider} />
-        <TextInput
-          style={styles.textInput}
-          placeholder="Digite aqui"
-          value={num2}
-          onChangeText={setNum2}
-          keyboardType="number-pad"
-        />
-      </View>
-      <Text style={styles.text}>{`PROD = ${result}`}</Text>
-      <TouchableOpacity onPress={multiplyTwoNumbers}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>Multiplicar</Text>
+    <>
+      <AppBar title="1004" backButton />
+      <Background>
+        <Divider />
+        <Text style={styles.text}>Cálculo de produto</Text>
+        <Divider />
+        <View style={styles.containerTextInput}>
+          <TextInput
+            style={styles.textInput}
+            label="Digite aqui"
+            mode="outlined"
+            value={num1}
+            onChangeText={setNum1}
+            keyboardType="number-pad"
+          />
+          <View style={styles.divider} />
+          <TextInput
+            style={styles.textInput}
+            label="Digite aqui"
+            mode="outlined"
+            value={num2}
+            onChangeText={setNum2}
+            keyboardType="number-pad"
+          />
         </View>
-      </TouchableOpacity>
-    </View>
+        <Divider />
+        <Text style={styles.text}>{`PRODUTO = ${result}`}</Text>
+        <Divider />
+        <Button onPress={multiplyTwoNumbers} mode="contained">
+          Calcular
+        </Button>
+      </Background>
+    </>
   );
 };
 
