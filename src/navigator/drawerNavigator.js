@@ -5,6 +5,7 @@ import StackNavigator1 from './stackNavigator1';
 import StackNavigator2 from './stackNavigator2';
 import StackNavigator3 from './stackNavigator3';
 import StackNavigator4 from './stackNavigator4';
+import StackNavigator5 from './stackNavigator5';
 
 const Drawer = createDrawerNavigator();
 
@@ -31,6 +32,11 @@ const DrawerNavigator = () => {
         options={{title: 'Page 4'}}
         name="Page4"
         component={StackNavigator4}
+      />
+      <Drawer.Screen
+        options={{title: 'Page 5'}}
+        name="Page5"
+        component={StackNavigator5}
       />
     </Drawer.Navigator>
   );
